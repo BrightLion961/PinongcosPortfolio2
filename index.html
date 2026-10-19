@@ -1,31 +1,32 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Peter Paul Pinongcos</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/44dd2010a2.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <div id="header">
-    <div class="container">
-        <nav>
-          <img src="images/logo2.png" class="logo">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-          </ul>
-        </nav>
-        <div class="header-text">
-          <p>Web Developer | QA Tester | UI/UX Designer</p>
-          <h1>Hi, I'm <span>Paul</span> Pinongcos</h1>
-        </div>
-    </div>  
+     <div class="container">
+         <nav>
+           <img src="images/logo2.png" class="logo">
+           <ul>
+             <li><a href="#home">Home</a></li>
+             <li><a href="#about">About Me</a></li>
+             <li><a href="#services">Skills</a></li>
+             <li><a href="#portfolio">Portfolio</a></li>
+             <li><a href="#contact">Contact Me</a></li>
+           </ul>
+         </nav>
+         <div class="header-text">
+           <p>Software Quality Assurance | UI/UX Designer | Web Developer</p>
+           <h1>Hi, I'm <span>Paul</span> Pinongcos</h1>
+         </div>
+     </div>  
 
-
+<!-------- about ---------->
 
     <div id="about">
       <div class="container">
@@ -44,17 +45,146 @@
 
 
                 <div class="tab-titles">
-                  <p class="tab-links">Skills</p>
-                  <p class="tab-links">Experience</p>
-                  <p class="tab-links">Education</p>
+                  <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                  <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                  <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
 
+                <div class="tab-contents active-tab" id="skills">
+                  <ul>
+                    <li><span>Software Development</span><br><br>&nbsp;&nbsp;&nbsp;Web/App Interface</li>
+                    <li><span>Software Quality Assurance</span><br><br>&nbsp;&nbsp;&nbsp;Testing Software</li>
+                    <li><span>Cybersecurity</span><br><br>&nbsp;&nbsp;&nbsp;</li>
+                  </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                  <ul>
+                    <li><span>2024 (Web Development)</span><br><br>&nbsp;&nbsp;&nbsp;Design and Development of an Assets Borrowing Management System for NU Laguna ITSO Office</li>
+                    <li><span>2025 (Mobile Application)</span><br><br>&nbsp;&nbsp;&nbsp;Dash Out</li>
+                  </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                  <ul>
+                    <li><span>2021-2025</span><br><br>&nbsp;&nbsp;&nbsp;National University Laguna</li>
+                  </ul>
                 </div>
           </div>
         </div>
       </div>
     </div>
 
+<!------------------- services ---------------------->
+<div id="services">
+  <div class="container">
+    <h1 class="sub-title">My Skills</h1>
+    <div class="services-list">
+        <div>
+        <i class="fa-solid fa-crop"></i>
+          <h2>Software Development</h2>
+          <p>
+            Creating functional and user-friendly applications by writing code, designing databases, 
+            and developing solutions that meet user needs. 
+          </p>
+          <a = href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <h2>Software Quality Assurance</h2>
+          <p>
+            I can help ensure that your software products meet high-quality standards by conducting thorough 
+            testing and identifying any issues or bugs. 
+          </p>
+          <a = href="#">Learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Cybersecurity</h2>
+          <p>
+            Learning and applying security practices to protect systems, applications, 
+            and data from potential threats, vulnerabilities, and unauthorized access. 
+          </p>
+          <a = href="#">Learn more</a>
+        </div>
+    </div>
+  </div>
+</div>
+<!-------------------- portfolio ---------------------->
+<div id="portfolio">
+  <div class="container">
+    <h1 class="sub-title">My Work</h1>
 
+    <div class="gallery-section">
+      <h2 class="section-title">Web &amp; Design Work</h2>
+      <div class="image-grid">
+        <img src="images/1.png" alt="Work Project 1" onclick="openLightbox(this)">
+        <img src="images/2.png" alt="Work Project 2" onclick="openLightbox(this)">
+        <img src="images/3.png" alt="Work Project 3" onclick="openLightbox(this)">
+        <img src="images/4.png" alt="Work Project 4" onclick="openLightbox(this)">
+        <img src="images/5.png" alt="Work Project 5" onclick="openLightbox(this)">
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <h2 class="section-title">Game Development</h2>
+      <div class="image-grid">
+        <img src="images/game1.jpg" alt="Game 1" onclick="openLightbox(this)">
+        <img src="images/game2.jpg" alt="Game 2" onclick="openLightbox(this)">
+        <img src="images/game3.jpg" alt="Game 3" onclick="openLightbox(this)">
+        <img src="images/game4.jpg" alt="Game 4" onclick="openLightbox(this)">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Lightbox / Modal -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged view">
+  </div>
+</div>
+
+
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname){
+        for(tablink of tablinks){
+          tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+
+      function openLightbox(imgElement) {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = imgElement.src;
+        lightboxImg.alt = imgElement.alt;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        var lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+      });
+
+    </script>
   </body>
 </html>
-  
+
+
